@@ -1,4 +1,4 @@
-# sqli-panel
+# CTF-SQLi
 
 A beginner-friendly SQL Injection Capture The Flag (CTF) challenge built with Flask and SQLite.
 
