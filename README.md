@@ -40,8 +40,12 @@ This challenge features a vulnerable login page, basic WAF-style input filtering
     ```bash
     python app.py
 
+---
+
 ## 🎯 Objective
 Your mission is to bypass the login form and retrieve the hidden flag.
+
+---
 
 ## 💬 Hints
 
@@ -50,11 +54,11 @@ Your mission is to bypass the login form and retrieve the hidden flag.
 - Not all inputs are welcome.
 - Who needs passwords anyway?
 
-📁 Project Structure
-pgsql
-Copy
-Edit
-sqli-panel/
+---
+
+## **📂 Project Structure**
+```
+CTF-SQLi/
 ├── app.py
 ├── database.db (auto-generated)
 ├── static/
@@ -62,26 +66,36 @@ sqli-panel/
 ├── templates/
 │   ├── login.html
 │   └── dashboard.html
-🧪 Tested With
-Python 3.10+
+```
+---
 
-Flask 2.2+
-
-Google Chrome / Firefox
-
-⚠️ Disclaimer
-This project is for educational use only. Do not attempt to exploit real systems without proper authorization.
-
-🧑‍💻 Author
-Made by @diddy as part of a semester-long cybersecurity learning project.
-
-yaml
-Copy
-Edit
+## **🧪 Tested With**
+- **Python 3.10+**
+- **Flask 2.2+**
+- **Google Chrome / Firefox**
 
 ---
 
-Let me know if you'd like a version with screenshots, walkthrough link, or to format this for HackDome challenge upload too 🔥
+## **⚠️ Disclaimer**
+This project is for educational use only. Do not attempt to exploit real systems without proper authorization.
+
+---
+
+## **📅 Author**
+**Bishesh Dulal**  
+GitHub: [@bisesdulal16](https://github.com/bisesdulal16)  
+Email: [bisesdulal16@gmail.com](mailto:bisesdulal16@gmail.com)
+
+---
+
+## **📃 License**
+**MIT License**  
+Free to use, distribute, and modify.
+
+---
+
+
+
 
 
 
