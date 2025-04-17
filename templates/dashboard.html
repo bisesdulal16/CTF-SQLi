@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+</head>
+<body>
+  <h2>{{ msg }}</h2>
+
+  {% if msg == "🎉 You made it in!" %}
+    <p>You're in. But can you find the real admin panel?</p>
+    <img src="https://i.imgflip.com/3txc8t.jpg" width="300">
+    <p><a href="/panel?auth=admin">[Maybe try this?]</a></p>
+  {% endif %}
+
+  {% if query %}
+  <pre style="color: gray; font-size: 12px;">[debug] Executed: {{ query }}</pre>
+  {% endif %}
+</body>
+</html>
