@@ -66,6 +66,7 @@ CTF-SQLi/
 ├── templates/
 │   ├── login.html
 │   └── dashboard.html
+│   └── panel.html
 ```
 ---
 

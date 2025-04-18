@@ -28,8 +28,9 @@ def login():
         password = request.form["password"]
         
         if username.lower() == "admin" and password.lower() == "admin":
-            error = "🤡 You really thought 'admin / admin' was gonna work? C’mon now..."
-            return render_template("login.html", error=error)
+            errortext = "🤡 You really thought 'admin / admin' was gonna work? C’mon now..."
+            gif = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2ltMjI3dWhxc3NjZzlvYzVmaTBkdmw4NGwzbngweWYxZzNxYXViZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xe4BnP5VjeTBdFY6jn/giphy.gif"
+            return render_template("login.html", error=errortext, gif= gif)
         #connect to the database
         conn = sqlite3.connect("database.db")
         cur = conn.cursor()
@@ -107,12 +108,11 @@ def dashboard():
 #Hidden panel with flag
 @app.route("/panel")
 def panel():
-    # Gets the 'user' value from the URL query string, defaults to "" if not provided
-    user = request.args.get("auth","")
-    #if user is admin take to admin panel
+    user = request.args.get("auth", "")
     if user == "admin":
-        return f"<h2>🎯 Flag: <code>{FLAG}</code></h2><p>You’ve reached the secret panel!</p>"
+        return render_template("panel.html", flag=FLAG)
     return "Access denied."
+
 
 @app.route("/404")
 def not_found():
@@ -121,6 +121,15 @@ def not_found():
     <img src='https://i.imgflip.com/2/3vzej.jpg' width='300'>
     <p><a href='/'>Try logging in again?</a></p>
     """
+
+@app.route("/robots.txt")
+def robots():
+    return (
+        "User-agent: *\n"
+        "Disallow: /panel\n"
+        "# Admin panels are never really hidden, are they? 😉"
+    ), 200, {'Content-Type': 'text/plain'}
+
 
 
 if __name__ == "__main__":

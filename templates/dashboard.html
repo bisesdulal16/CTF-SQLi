@@ -1,19 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Dashboard</title>
+  <meta charset="UTF-8">
+  <title>Dashboard - SQLi Panel</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #0f0;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      padding: 50px;
+      overflow-x: hidden;
+    }
+
+    .matrix-glow {
+      text-shadow: 0 0 10px #0f0, 0 0 20px #0f0;
+      animation: flicker 1.5s infinite alternate;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 0.8; }
+      100% { opacity: 1; }
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: rgba(0, 255, 0, 0.05);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+      animation: fadeIn 1s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    a {
+      color: #00ffcc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .query {
+      margin-top: 25px;
+      padding: 10px;
+      background: rgba(0, 255, 0, 0.1);
+      border-radius: 10px;
+      font-size: 14px;
+    }
+
+    .meme img {
+      margin-top: 30px;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #0f0;
+    }
+
+    .hint {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #99ff99;
+    }
+  </style>
 </head>
 <body>
-  <h2>{{ msg }}</h2>
+  <div class="container">
+    <h1 class="matrix-glow">{{ msg }}</h1>
 
-  {% if msg == "🎉 You made it in!" %}
-    <p>You're in. But can you find the real admin panel?</p>
-    <img src="https://i.imgflip.com/3txc8t.jpg" width="300">
-    <p><a href="/panel?auth=admin">[Maybe try this?]</a></p>
-  {% endif %}
+    {% if msg == "🎉 You made it in!" %}
+      <p>You've breached the outer layer... but the flag lies deeper.</p>
+      <p>The real prize? It's not here... but maybe it's waiting behind a path known only to those who think like <code>admin</code>.</p>
 
-  {% if query %}
-  <pre style="color: gray; font-size: 12px;">[debug] Executed: {{ query }}</pre>
-  {% endif %}
+      <p class="subtle">Hint: Some panels only open when you bring the right key.</p>
+
+      <!-- 👀 View source always helps -->
+      <!-- /panel?auth=admin -->
+
+    {% else %}
+      <p>You almost did it. Or maybe you didn’t. Or maybe this is part of it 🤫</p>
+    {% endif %}
+
+    <div class="query">
+      <strong>[debug]</strong> {{ query }}
+    </div>
+
+    <div class="meme">
+      <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWdtZTdvbzlieXJpbDNrbHE0Mm96bzB6azBseGdxYWJvNDIyYmcwbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ntxLxpZ0xW1kA/giphy.gif" alt="Meme of the moment">
+    </div>
+
+    <div class="hint">
+      <!-- hint -->
+      Hint: SQL knows the truth. You just need to ask it the right way.
+    </div>
+  </div>
 </body>
 </html>

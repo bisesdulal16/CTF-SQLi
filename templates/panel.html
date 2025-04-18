@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel – Flag Unlocked</title>
+  <style>
+    body {
+      background: #000;
+      color: #00ff88;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    .flag-container {
+      border: 2px dashed #00ff88;
+      padding: 30px;
+      border-radius: 15px;
+      display: inline-block;
+      box-shadow: 0 0 30px #00ff88;
+      animation: pulse 2s infinite alternate;
+    }
+
+    code {
+      background: #111;
+      padding: 10px 15px;
+      font-size: 20px;
+      border-radius: 5px;
+      display: block;
+      margin: 20px auto;
+      color: #00ff88;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 10px #00ff88; }
+      100% { box-shadow: 0 0 40px #00ff88; }
+    }
+
+    .meme {
+      margin-top: 40px;
+    }
+
+    .meme img {
+      border-radius: 10px;
+      max-width: 100%;
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div class="flag-container">
+    <h1>🎯 Access Granted</h1>
+    <p>Nice work, agent. Here's what you came for:</p>
+    <code>{{ flag }}</code>
+    <p style="font-size: 14px;">Don’t forget to screenshot this moment. You earned it.</p>
+
+    <!-- GitHub footer support inside login -->
+  <p style="font-size: 20px; color: #70ffb7; margin-top: 10px;">
+    ⭐ Like this project? 
+    <a href="https://github.com/bisesdulal16/CTF-SQLi" 
+      target="_blank" 
+      style="color: #00ff88; text-decoration: none;">
+      Star it on GitHub
+    </a> 🙌
+    <br>
+    <a href="https://github.com/bisesdulal16/CTF-SQLi" style="color: #00ff88; text-decoration: none;">@bisesdulal16</a>
+  </p>
+  </div>
+
+  
+
+  <div class="meme">
+    <img src="https://media.tenor.com/0AVu9ZLbhW4AAAAd/hacker.gif" alt="Hackerman">
+    <p style="color: #888; font-size: 13px;">You now own root... spiritually.</p>
+  </div>
+  
+</body>
+</html>

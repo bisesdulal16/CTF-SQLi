@@ -180,3 +180,25 @@ input[type="submit"]:active
     height: calc(20vw - 2px);
   }
 }
+
+.footer {
+  margin-top: 50px;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #88ffaa;
+  text-align: center;
+  opacity: 0.85;
+  border-top: 1px dashed rgba(112, 255, 183, 0.3);
+}
+
+.footer a {
+  color: #70ffb7;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #00ff88;
+  text-shadow: 0 0 5px #00ff88;
+}
