@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, redirect, url_for, send_from_directory
 import sqlite3
 import random
+import os
 
 app = Flask(__name__, static_folder='static')
 FLAG = "flag{you_diddyT}"
@@ -135,7 +136,12 @@ def serve_static(filename):
     return send_from_directory(app.static_folder, filename)
 
 
-if __name__ == "__main__":
+
+
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=True, host='0.0.0.0', port=port)
+    
     init_db() #set up db everytime the app is run
     app.run(debug=True) #Launch the server
 
