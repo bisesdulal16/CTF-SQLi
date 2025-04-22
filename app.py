@@ -1,8 +1,8 @@
-from flask import Flask, request, render_template, redirect, url_for
+from flask import Flask, request, render_template, redirect, url_for, send_from_directory
 import sqlite3
 import random
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 FLAG = "flag{you_diddyT}"
 
 #Initialize DB with sample user
@@ -129,7 +129,10 @@ def robots():
         "Disallow: /panel\n"
         "# Admin panels are never really hidden, are they? 😉"
     ), 200, {'Content-Type': 'text/plain'}
-
+    
+@app.route('/static/<path:filename>')
+def serve_static(filename):
+    return send_from_directory(app.static_folder, filename)
 
 
 if __name__ == "__main__":
